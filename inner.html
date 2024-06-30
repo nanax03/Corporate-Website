@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inner Collection - NurCovers</title>
+    <link rel="stylesheet" href="inner.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="image/logo2.jpg" alt="Nurcovers Logo" class="small-icon"></a>
+            <span class="logo-text">Nurcovers</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html" onclick="smoothScroll('#home')">Home</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Collections</a>
+                    <div class="dropdown-content">
+                        <a href="longshawl.html">Long Shawl</a>
+                        <a href="instantprinted.html">Instant Printed</a>
+                        <a href="instantplain.html">Instant Plain</a>
+                        <a href="sarung.html">Sarung</a>
+                        <a href="bawal.html">Bawal</a>
+                        <a href="scarves.html">Scarves</a>
+                        <a href="inner.html">Inner</a>
+                        <a href="accessories.html">Accessories</a>
+                    </div>
+                </li>
+                <li><a href="sales.html" onclick="smoothScroll('#sales')">Sales</a></li>
+                <li class="dropdown">
+                    <a href="prayer.html" class="dropbtn">Prayerwear</a>
+                    <div class="dropdown-content">
+                        <a href="prayermat.html">Prayer mat</a>
+                        <a href="mini.html">Mini telekung</a>
+                        <a href="telekung.html">Telekung</a>
+                    </div>
+                </li>
+                <li><a href="about.html" onclick="smoothScroll('#about-us')">About us</a></li>
+                <li><a href="cart.html">Cart</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="inner-collection" class="container">
+            <h1>Inner Collection</h1>
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="image/longsleevebeige.png" alt="Long Sleeve Beige">
+                    </div>
+                    <div class="product-name">Long Sleeve Beige</div>
+                    <li><strong>Cotton:</strong> Lightweight and breathable, perfect for everyday wear.</li>
+                    <div class="product-price">RM15.00</div>
+                    <button id="add-to-cart-1" class="button add-to-cart">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="image/longsleeveblack.png" alt="Long Sleeve Black">
+                    </div>
+                    <div class="product-name">Long Sleeve Black</div>
+                    <li><strong>Cotton:</strong> Lightweight and breathable, perfect for everyday wear.</li>
+                    <div class="product-price">RM15.00</div>
+                    <button id="add-to-cart-2" class="button add-to-cart">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="image/longsleevebeige.png" alt="Long Sleeve Rose Pink">
+                    </div>
+                    <div class="product-name">Long Sleeve Rose Pink</div>
+                    <li><strong>Cotton:</strong> Lightweight and breathable, perfect for everyday wear.</li>
+                    <div class="product-price">RM15.00</div>
+                    <button id="add-to-cart-3" class="button add-to-cart">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="image/longsleevebeige.png" alt="Long Sleeve Sand">
+                    </div>
+                    <div class="product-name">Long Sleeve Sand</div>
+                    <li><strong>Cotton:</strong> Lightweight and breathable, perfect for everyday wear.</li>
+                    <div class="product-price">RM15.00</div>
+                    <button id="add-to-cart-4" class="button add-to-cart">Add to Cart</button>
+                </div>
+                <!-- Add more product cards as needed -->
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-links">
+            <a href="about.html">About Us</a>
+            <a href="#">Contact</a>
+            <a href="#">FAQ</a>
+        </div>
+        <div class="social-media">
+            <a href="https://www.instagram.com/yourinstagramhandle" target="_blank"><img src="image/icon1.jpeg" alt="Instagram" class="small-icon"></a>
+            <a href="https://www.facebook.com/yourfacebookpage" target="_blank"><img src="image/icon2.jpeg" alt="Facebook" class="small-icon"></a>
+            <a href="https://wa.me/0143671068" target="_blank"><img src="image/icon3.jpeg" alt="WhatsApp" class="small-icon"></a>
+        </div>
+        <div class="newsletter">
+            <form>
+                <input type="email" placeholder="Subscribe to our newsletter">
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript for smooth scrolling to anchor links
+        function smoothScroll(target) {
+            document.querySelector(target).scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+
+        // JavaScript for add to cart functionality
+        const cart = [];
+
+        document.querySelectorAll('.add-to-cart').forEach(button => {
+            button.addEventListener('click', event => {
+                const productCard = event.target.closest('.product-card');
+                const productName = productCard.querySelector('.product-name').innerText;
+                const productPrice = productCard.querySelector('.product-price').innerText;
+
+                const product = {
+                    name: productName,
+                    price: productPrice
+                };
+
+                cart.push(product);
+                alert(`${productName} has been added to your cart.`);
+                console.log(cart);
+            });
+        });
+    </script>
+</body>
+</html>

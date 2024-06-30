@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nurcovers</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Additional CSS for the photo slider */
+        .slider {
+            max-width: 100%;
+            overflow: hidden;
+            position: relative;
+            margin-top: 20px; /* Adjust spacing */
+        }
+        
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+        
+        .slide {
+            min-width: 100%;
+            flex: 1 0 auto; /* Ensure each slide takes full width */
+        }
+
+        .slide img {
+            width: 100%;
+            height: auto;
+        }
+
+        /* Optional: Previous and Next buttons styling */
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+            z-index: 1;
+        }
+
+        .prev {
+            left: 10px;
+        }
+
+        .next {
+            right: 10px;
+        }
+
+        /* Small icons styles */
+        .small-icon {
+            width: 30px;
+            height: auto;
+            margin: 0 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .small-icon:hover {
+            transform: scale(1.2); /* Scale up on hover */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="image/logo2.jpg" alt="Nurcovers Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html" onclick="smoothScroll('#home')">Home</a></li>
+                <li class="dropdown">
+                    <a href="Collection.html" class="dropbtn">Collections</a>
+                    <div class="dropdown-content">
+                        <a href="longshawl.html">Long Shawl</a>
+                        <a href="instantprinted.html">Instant Printed</a>
+                        <a href="instantplain.html">Instant Plain</a>
+                        <a href="sarung.html">Sarung</a>
+                        <a href="bawal.html">Bawal</a>
+                        <a href="scarves.html">Scarves</a>
+                        <a href="innner.html">Inner</a>
+                        <a href="accessories.html">Accessories</a>
+                    </div>
+                </li>
+                <li><a href="sales.html" onclick="smoothScroll('#sales')">Sales</a></li>
+                <li class="dropdown">
+                    <a href="prayer.html" class="dropbtn">Prayerwear</a>
+                    <div class="dropdown-content">
+                        <a href="prayermat.html">Prayer mat</a>
+                        <a href="mini.html">Mini telekung</a>
+                        <a href="telekung.html">Telekung</a>
+                    </div>
+                </li>
+                <li><a href="about.html" onclick="smoothScroll('#about-us')">About us</a></li>
+                <li><a href="cart.html">Cart</a></li>
+            </ul>
+        </nav>
+        <div class="icons">
+            <a href="#"><img src="image/icon4.jpeg" alt="Search" class="small-icon"></a>
+            <a href="#"><img src="image/icon6.jpeg" alt="Account" class="small-icon"></a>
+            <a href="#"><img src="image/icon5.jpeg" alt="Cart" class="small-icon"></a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Banner Slider Section -->
+        <section class="banner-slider">
+            <div class="slider">
+                <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+                <div class="slides">
+                    <div class="slide"><img src="image/picture1.jpeg" alt="Banner 1"></div>
+                    <div class="slide"><img src="image/picture2.jpeg" alt="Banner 2"></div>
+                </div>
+                <button class="next" onclick="changeSlide(1)">&#10095;</button>
+            </div>
+        </section>
+    <footer>
+        <div class="footer-links">
+            <a href="about.html">About Us</a>
+            <a href="#">Contact</a>
+            <a href="#">FAQ</a>
+        </div>
+        <div class="social-media">
+            <a href="https://www.instagram.com/yourinstagramhandle" target="_blank"><img src="image/icon1.jpeg" alt="Instagram" class="small-icon"></a>
+            <a href="https://www.facebook.com/yourfacebookpage" target="_blank"><img src="image/icon2.jpeg" alt="Facebook" class="small-icon"></a>
+            <a href="https://wa.me/0143671068" target="_blank"><img src="image/icon3.jpeg" alt="WhatsApp" class="small-icon"></a>
+        </div>
+        <div class="newsletter">
+            <form>
+                <input type="email" placeholder="Subscribe to our newsletter">
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+    </footer>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slides');
+        const slideWidth = document.querySelector('.slide').clientWidth;
+
+        function changeSlide(direction) {
+            slides.forEach(slider => {
+                let currentSlide = parseInt(slider.getAttribute('data-current-slide')) || 0;
+                currentSlide = (currentSlide + direction + slider.children.length) % slider.children.length;
+                slider.style.transform = `translateX(${-currentSlide * slideWidth}px)`;
+                slider.setAttribute('data-current-slide', currentSlide);
+            });
+        }
+
+        // Auto slide every 3 seconds
+        setInterval(() => {
+            changeSlide(1); // Move to the next slide
+        }, 3000); // Adjust the interval time (in milliseconds) as needed
+    </script>
+</body>
+</html>

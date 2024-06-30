@@ -1,0 +1,182 @@
+/* Add any additional CSS specific to this page here */
+header {
+    background-color: #f8f8f8;
+    padding: 10px 20px;
+    border-bottom: 1px solid #e7e7e7;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.2em; /* Adjust the font size as needed */
+    font-weight: bold;
+    display: flex; /* Ensure flex properties apply */
+    align-items: center; /* Center alignment for logo and text */
+}
+
+.logo img {
+    width: 40px; /* Adjust width of the logo */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 10px; /* Space between logo and text */
+}
+
+.logo-text {
+    font-size: 1em; /* Adjust text size as needed */
+}
+
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+    position: relative;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+nav ul li a:hover {
+    background-color: #e7e7e7;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.icons img {
+    width: 24px;
+    height: 24px;
+    margin-left: 15px;
+}
+
+main {
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 40px;
+}
+
+footer {
+    background-color: #f8f8f8;
+    text-align: center;
+    padding: 20px 0;
+    border-top: 1px solid #e7e7e7;
+}
+
+.footer-links, .social-media, .newsletter {
+    margin-bottom: 20px;
+}
+
+.small-icon {
+    width: 20px;
+    height: 20px;
+    margin: 0 5px;
+}
+
+.banner {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.banner img {
+    width: 100%;
+    height: auto;
+}
+
+.banner-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
+
+.button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 16px;
+}
+
+.product-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.product-card {
+    background-color: #fff;
+    border: 1px solid #e7e7e7;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 200px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.product-image img {
+    width: 100%;
+    height: auto;
+}
+
+.product-name {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+.product-price {
+    color: #4CAF50;
+    font-size: 1.1em;
+    margin-bottom: 10px;
+}
+
+.sales, .about-us, .collections {
+    padding: 20px;
+    margin: 20px 0;
+}
+
+.sales h2, .about-us h2, .collections h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.sales p, .about-us p, .collections p {
+    font-size: 1.1em;
+    line-height: 1.6;
+}

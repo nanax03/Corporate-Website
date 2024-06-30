@@ -1,0 +1,261 @@
+/* Basic reset to remove default margins and paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Import Google Font */
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Header styles */
+header {
+    background-color: #f8f8f8;
+    padding: 10px 20px;
+    border-bottom: 1px solid #e7e7e7;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 50px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.logo-text {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+    position: relative;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+nav ul li a:hover {
+    background-color: #e7e7e7;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Icon styles */
+.icons img {
+    width: 24px;
+    height: 24px;
+    margin-left: 15px;
+}
+
+/* Main content styles */
+main {
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 40px;
+}
+
+/* Bawal Collection styles */
+.product-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.product-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+    max-width: 200px; /* Adjust the width as needed */
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
+.product-image img {
+    width: 100%;
+    height: auto;
+}
+
+.product-name {
+    font-size: 1.2em;
+    font-weight: 400;
+    margin: 10px 0;
+}
+
+.product-price {
+    font-size: 1em;
+    color: #666;
+}
+
+.button.add-to-cart {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 10px 0;
+    cursor: pointer;
+    font-size: 1em;
+    border-radius: 5px;
+    transition: background-color 0.2s;
+}
+
+.button.add-to-cart:hover {
+    background-color: #0056b3;
+}
+
+/* Video gallery styles */
+.video-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.video-gallery video {
+    max-width: 300px;
+    flex: 1 1 300px;
+}
+
+/* Banner styles */
+.banner {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.banner img {
+    width: 100%;
+    height: auto;
+}
+
+.banner-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
+
+/* Footer styles */
+footer {
+    background-color: #f8f8f8;
+    text-align: center;
+    padding: 20px 0;
+    border-top: 1px solid #e7e7e7;
+}
+
+.footer-links, .social-media, .newsletter {
+    margin-bottom: 20px;
+}
+
+.footer-links a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+.footer-links a:hover {
+    color: #007BFF;
+}
+
+.social-media a {
+    margin: 0 10px;
+}
+
+.small-icon {
+    width: 20px;
+    height: 20px;
+    margin: 0 5px;
+}
+
+.newsletter form {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.newsletter input[type="email"] {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 250px; /* Adjust the width as needed */
+}
+
+.newsletter button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #007BFF;
+    color: white;
+    font-size: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.newsletter button:hover {
+    background-color: #0056b3;
+}
+
+/* Page-specific styles */
+.sales, .about-us, .collections {
+    padding: 20px;
+    margin: 20px 0;
+}
+
+.sales h2, .about-us h2, .collections h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.sales p, .about-us p, .collections p {
+    font-size: 1.1em;
+    line-height: 1.6;
+}
